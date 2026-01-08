@@ -89,7 +89,7 @@ function App() {
 			</section>
 
 			<section className="max-w-[1280px] mx-auto">
-				<div className="mx-auto bg-paper-300 max-w-[60%] p-1 rounded-lg">
+				<div className="mx-auto bg-paper-200 max-w-[60%] p-1 rounded-lg">
 					<Accordion
 						type="single"
 						collapsible
