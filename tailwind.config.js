@@ -7,24 +7,45 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Core book-themed color palette
-        background: '#F9F6F0',     // Main cream page color
-        surface: '#FFFFFF',        // Card/book cover backgrounds  
-        'surface-highlight': '#F0EAE0', // Subtle paper accents
-        text: '#3E2723',           // Primary ink color
-        'text-muted': '#8D7F75',   // Secondary faded text
-        primary: '#8D6E63',        // Interactive elements (buttons)
-        'primary-hover': '#5D4037', // Hover states
-        border: '#E0D6CC',         // Subtle page borders
-        accent: '#A65D3D',         // Terracotta highlights
-        'accent-light': '#F0E6E1', // Light accent backgrounds
-        crisis: '#9C3636',         // Error/warning
-        'crisis-bg': '#FCEBEB',    // Error backgrounds
+        // Restore Tailwind defaults (limited to black/white)
+        white: '#FFFFFF',
+        black: '#000000',
+        
+        // Paper palette as main semantic colors (shadcn/ui compatible)
+        background: '#fdfbf7',      // paper-50
+        foreground: '#382c22',      // paper-900  
+        card: '#f7f3e8',           // paper-100
+        'card-foreground': '#382c22', // paper-900
+        popover: '#fdfbf7',         // paper-50
+        'popover-foreground': '#382c22', // paper-900
+        primary: '#5c4d3c',         // paper-800
+        'primary-foreground': '#fdfbf7', // paper-50
+        secondary: '#efe8d3',       // paper-200
+        'secondary-foreground': '#382c22', // paper-900
+        muted: '#5c4d3c',           // paper-800
+        'muted-foreground': '#e5dbbc', // paper-300
+        accent: '#e5dbbc',          // paper-300 (border/line color)
+        'accent-foreground': '#382c22', // paper-900
+        destructive: '#dc2626',     // Standard red for errors
+        'destructive-foreground': '#fdfbf7', // paper-50
+        border: '#e5dbbc',          // paper-300 (as intended)
+        input: '#e5dbbc',           // paper-300
+        ring: '#5c4d3c',            // paper-800
+        
+        // Keep paper palette available for explicit use
+        paper: {
+          50: "#fdfbf7",
+          100: "#f7f3e8", 
+          200: "#efe8d3",
+          300: "#e5dbbc", // Border/Line
+          800: "#5c4d3c", // Muted text  
+          900: "#382c22", // Primary text
+        }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
-        display: ['Inter', 'sans-serif'],
+        sans: ['Crimson Text', 'Georgia', 'serif'],
+        serif: ['Crimson Text', 'Georgia', 'serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
       },
       boxShadow: {
         soft: '0 4px 20px -2px rgba(56, 44, 34, 0.05), 0 2px 6px -1px rgba(56, 44, 34, 0.02)',

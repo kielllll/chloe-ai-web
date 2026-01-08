@@ -1,12 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700;900&display=swap');
 
 @import 'tailwindcss';
 
 @import 'tw-animate-css';
 
+@theme {
+  --color-background: #fdfbf7;
+  --color-foreground: #382c22;
+  --color-card: #f7f3e8;
+  --color-card-foreground: #382c22;
+  --color-popover: #fdfbf7;
+  --color-popover-foreground: #382c22;
+  --color-primary: #5c4d3c;
+  --color-primary-foreground: #fdfbf7;
+  --color-secondary: #efe8d3;
+  --color-secondary-foreground: #382c22;
+  --color-muted: #5c4d3c;
+  --color-muted-foreground: #e5dbbc;
+  --color-accent: #e5dbbc;
+  --color-accent-foreground: #382c22;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #fdfbf7;
+  --color-border: #e5dbbc;
+  --color-input: #e5dbbc;
+  --color-ring: #5c4d3c;
+  --color-paper-50: #fdfbf7;
+  --color-paper-100: #f7f3e8;
+  --color-paper-200: #efe8d3;
+  --color-paper-300: #e5dbbc;
+  --color-paper-800: #5c4d3c;
+  --color-paper-900: #382c22;
+  --font-family-sans: 'Crimson Text', Georgia, serif;
+  --font-family-serif: 'Crimson Text', Georgia, serif;
+  --font-family-display: 'Playfair Display', Georgia, serif;
+}
+
 body {
   @apply m-0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Crimson Text', Georgia, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,59 +46,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-:root {
-  --background: #F9F6F0;
-  --foreground: #3E2723;
-  --card: #FFFFFF;
-  --card-foreground: #3E2723;
-  --popover: #FFFFFF;
-  --popover-foreground: #3E2723;
-  --primary: #8D6E63;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F0EAE0;
-  --secondary-foreground: #3E2723;
-  --muted: #8D7F75;
-  --muted-foreground: #F9F6F0;
-  --accent: #A65D3D;
-  --accent-foreground: #FFFFFF;
-  --destructive: #9C3636;
-  --destructive-foreground: #FFFFFF;
-  --border: #E0D6CC;
-  --input: #E0D6CC;
-  --ring: #8D6E63;
-  --radius: 0.625rem;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
-
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
     @apply bg-background text-foreground;
   }
