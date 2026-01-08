@@ -1,60 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
 	BookOpen,
-	Route as RouteIcon,
-	Server,
-	Shield,
-	Sparkles,
-	Waves,
-	Zap,
+	CircleAlert,
+	HandHeart,
+	LibraryBig,
+	Lock,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({ component: App });
 
 function App() {
 	const features = [
 		{
-			icon: <Zap className="w-12 h-12" />,
-			title: "Intelligent Recommendations",
+			icon: <Lock className="size-8 text-paper-900" />,
+			title: "Private with Optional Saving",
 			description:
-				"Get personalized book suggestions based on your reading history and preferences using advanced AI algorithms.",
+				"No login required. Chats are anonymnous. You explicity decide whether to save a conversation for future reference.",
 		},
 		{
-			icon: <Server className="w-12 h-12" />,
-			title: "Smart Reading Insights",
+			icon: <LibraryBig className="size-8 text-paper-900" />,
+			title: "Curated Wisdom",
 			description:
-				"Receive real-time analysis of your reading patterns, comprehension levels, and learning progress.",
+				"Access insights distilled from top psychology and self-improvement literature instantly, organized for your personal growth.",
 		},
 		{
-			icon: <RouteIcon className="w-12 h-12" />,
-			title: "Digital Library Management",
+			icon: <HandHeart className="size-8 text-paper-900" />,
+			title: "Always Free",
 			description:
-				"Organize your entire book collection with powerful search, tagging, and categorization features.",
-		},
-		{
-			icon: <Shield className="w-12 h-12" />,
-			title: "Privacy-First Design",
-			description:
-				"Your reading data stays secure with end-to-end encryption and local storage options.",
-		},
-		{
-			icon: <Waves className="w-12 h-12" />,
-			title: "Adaptive Reading Experience",
-			description:
-				"Enjoy personalized typography, lighting, and pacing that adapts to your reading environment.",
-		},
-		{
-			icon: <Sparkles className="w-12 h-12" />,
-			title: "AI-Powered Summaries",
-			description:
-				"Generate intelligent book summaries and key insights to enhance your understanding and retention.",
+				"Democratizing access to mental wellness tools. Use Chloe AI as much as you need, completely free of charge.",
 		},
 	];
 
 	return (
-		<div className="bg-background">
-			<section className="relative p-4 text-center overflow-hidden">
+		<div className="bg-background py-4">
+			<section className="relative p-4 pt-0 text-center overflow-hidden">
 				<div className="relative mx-auto py-16 px-10 bg-paper-200 rounded-lg">
 					<div className="flex flex-col gap-3 items-center">
 						<h1 className="text-6xl md:text-7xl font-bold font-black text-foreground font-serif [letter-spacing:-0.08em]">
@@ -82,6 +69,60 @@ function App() {
 							</button>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<section className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 overflow-hidden">
+				{features.map((feature) => (
+					<Card key={feature.title} className="bg-paper-100! border-paper-800!">
+						<CardHeader className="flex flex-col gap-2">
+							<div className="p-2 bg-paper-200 rounded-lg">{feature.icon}</div>
+							<span className="font-semibold text-xl text-black">
+								{feature.title}
+							</span>
+						</CardHeader>
+						<CardContent>
+							<p className="text-black">{feature.description}</p>
+						</CardContent>
+					</Card>
+				))}
+			</section>
+
+			<section>
+				<div className="mx-auto bg-paper-300 max-w-[60%] p-1 rounded-lg">
+					<Accordion
+						type="single"
+						collapsible
+						className="w-full"
+						defaultValue="item-1"
+					>
+						<AccordionItem value="item-1">
+							<AccordionTrigger className="p-6 bg-paper-50 flex gap-2 items-center">
+								<CircleAlert className="size-6 text-orange-500" />
+								<span className="flex-1">Important Disclaimer</span>
+							</AccordionTrigger>
+							<AccordionContent className="p-6 space-y-4">
+								<p>
+									<strong>Not Medical Advice: </strong>This AI provides guidance
+									based on literature, not medical diagnosis. The advice
+									generated is for informational purposes only and should not be
+									considered a substitute for professional medical advice,
+									diagnosis, or treatment.
+								</p>
+								<p>
+									<strong>No Professional Relationship: </strong>Using this tool
+									does not create a doctor-patient or therapist-client
+									relationship.
+								</p>
+								<p>
+									<strong>Crisis Situations: </strong>If you are in crisis or
+									having thoughts of harming yourself or others, please contact
+									emergency services immediately or use the crisis resource
+									hotline in your area.
+								</p>
+							</AccordionContent>
+						</AccordionItem>
+					</Accordion>
 				</div>
 			</section>
 		</div>

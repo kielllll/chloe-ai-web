@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;700;900&family=Merriweather:wght@300;400;700;900&display=swap');
 
 @import 'tailwindcss';
 
@@ -30,14 +30,16 @@
   --color-paper-300: #e5dbbc;
   --color-paper-800: #5c4d3c;
   --color-paper-900: #382c22;
-  --font-family-sans: 'Crimson Text', Georgia, serif;
-  --font-family-serif: 'Crimson Text', Georgia, serif;
-  --font-family-display: 'Playfair Display', Georgia, serif;
+  --font-family-sans: 'Merriweather', Georgia, serif;
+  --font-family-serif: 'Merriweather', Georgia, serif;
+  --font-family-display: 'Merriweather', Georgia, serif;
+  --font-family-crimson: 'Crimson Text', Georgia, serif;
+  --font-family-playfair: 'Playfair Display', Georgia, serif;
 }
 
 body {
   @apply m-0;
-  font-family: 'Crimson Text', Georgia, serif;
+  font-family: 'Merriweather', Georgia, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -43,9 +43,12 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Crimson Text', 'Georgia', 'serif'],
-        serif: ['Crimson Text', 'Georgia', 'serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['Merriweather', 'Georgia', 'serif'],
+        serif: ['Merriweather', 'Georgia', 'serif'],
+        display: ['Merriweather', 'Georgia', 'serif'],
+        merriweather: ['Merriweather', 'Georgia', 'serif'],
+        crimson: ['Crimson Text', 'Georgia', 'serif'],
+        playfair: ['Playfair Display', 'Georgia', 'serif'],
       },
       boxShadow: {
         soft: '0 4px 20px -2px rgba(56, 44, 34, 0.05), 0 2px 6px -1px rgba(56, 44, 34, 0.02)',
