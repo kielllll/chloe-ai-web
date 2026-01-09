@@ -41,7 +41,7 @@ function App() {
 
 	return (
 		<div className="bg-background py-10 space-y-8">
-			<section className="relative max-w-[1280px] mx-auto p-4 pt-0 text-center overflow-hidden">
+			<section className="relative max-w-7xl mx-auto p-4 pt-0 text-center overflow-hidden">
 				<div className="relative mx-auto py-16 px-10 bg-paper-200 rounded-lg">
 					<div className="flex flex-col gap-3 items-center">
 						<h1 className="text-6xl md:text-7xl font-bold font-black text-foreground font-serif [letter-spacing:-0.08em]">
@@ -72,7 +72,7 @@ function App() {
 				</div>
 			</section>
 
-			<section className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 overflow-hidden">
+			<section className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 overflow-hidden">
 				{features.map((feature) => (
 					<Card key={feature.title} className="bg-paper-100! border-paper-800!">
 						<CardHeader className="flex flex-col gap-2">
@@ -88,7 +88,7 @@ function App() {
 				))}
 			</section>
 
-			<section className="max-w-[1280px] mx-auto">
+			<section className="max-w-7xl mx-auto">
 				<div className="mx-auto bg-paper-200 max-w-[60%] p-1 rounded-lg">
 					<Accordion
 						type="single"
