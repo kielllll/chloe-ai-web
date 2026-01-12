@@ -126,8 +126,8 @@ function App() {
 				))}
 			</section>
 
-			<section className="max-w-7xl mx-auto">
-				<div className="mx-auto bg-paper-200 max-w-[60%] p-1 rounded-lg">
+			<section className="max-w-7xl mx-auto p-4 md:p-0">
+				<div className="mx-auto bg-paper-200 w-full md:max-w-[60%] p-1 rounded-lg">
 					<Accordion
 						type="single"
 						collapsible
@@ -170,9 +170,9 @@ function App() {
 				<div className="max-w-7xl p-6 flex flex-col gap-4 mx-auto">
 					<span className="text-2xl font-bold">Core Technology</span>
 					<p>
-						Chloe AI utilizes vector embeddings to retrieve relevant passages
+						Chloe utilizes vector embeddings to retrieve relevant passages
 						from a curated library of self-help literature, along with Google
-						Gemini's fast LLM. Chloe AI doesn't just generate text, it grounds
+						Gemini's fast LLM. Chloe doesn't just generate text, it grounds
 						responses in established psychological frameworks.
 					</p>
 
