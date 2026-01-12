@@ -1,10 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
 	BookOpen,
+	Brain,
 	CircleAlert,
+	Cpu,
+	Database,
 	HandHeart,
 	LibraryBig,
 	Lock,
+	Sprout,
+	TrendingUp,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -36,6 +41,39 @@ function App() {
 			title: "Always Free",
 			description:
 				"Democratizing access to mental wellness tools. Use Chloe AI as much as you need, completely free of charge.",
+		},
+	];
+
+	const coreTechnologies = [
+		{
+			icon: <Cpu className="size-8 text-paper-900" />,
+			title: "LLM Architecture",
+			description:
+				"Powered by Google Gemini's Flash LLM for nuanced understanding of complex emotional queries and plugged with limited context retention.",
+		},
+		{
+			icon: <Database className="size-8 text-paper-900" />,
+			title: "Vector Database",
+			description:
+				"Integrated with semantic search indexing over 100+ classic self-help titles to provide accurate citations.",
+		},
+	];
+
+	const genres = [
+		{
+			icon: <Brain className="size-8 text-paper-900" />,
+			title: "Cognitive Behavioral Therapy",
+			description: "Techniques for cognitive restructuring",
+		},
+		{
+			icon: <Sprout className="size-8 text-paper-900" />,
+			title: "Stoicism & Mindfulness",
+			description: "Ancient wisdom for modern emotional resilience",
+		},
+		{
+			icon: <TrendingUp className="size-8 text-paper-900" />,
+			title: "Productivity & Habits",
+			description: "Systems for personal growth and efficiency",
 		},
 	];
 
@@ -74,7 +112,7 @@ function App() {
 
 			<section className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 p-4 overflow-hidden">
 				{features.map((feature) => (
-					<Card key={feature.title} className="bg-paper-100! border-paper-800!">
+					<Card key={feature.title} className="bg-paper-100! border-paper-300!">
 						<CardHeader className="flex flex-col gap-2">
 							<div className="p-2 bg-paper-200 rounded-lg">{feature.icon}</div>
 							<span className="font-semibold text-xl text-black">
@@ -99,7 +137,9 @@ function App() {
 						<AccordionItem value="item-1">
 							<AccordionTrigger className="p-6 bg-paper-50 flex gap-2 items-center">
 								<CircleAlert className="size-6 text-orange-500" />
-								<span className="flex-1">Important Disclaimer</span>
+								<span className="flex-1 text-lg font-semibold">
+									Important Disclaimer
+								</span>
 							</AccordionTrigger>
 							<AccordionContent className="p-6 space-y-4">
 								<p>
@@ -123,6 +163,69 @@ function App() {
 							</AccordionContent>
 						</AccordionItem>
 					</Accordion>
+				</div>
+			</section>
+
+			<section className="bg-paper-200">
+				<div className="max-w-7xl p-6 flex flex-col gap-4 mx-auto">
+					<span className="text-2xl font-bold">Core Technology</span>
+					<p>
+						Chloe AI utilizes vector embeddings to retrieve relevant passages
+						from a curated library of self-help literature, along with Google
+						Gemini's fast LLM. Chloe AI doesn't just generate text, it grounds
+						responses in established psychological frameworks.
+					</p>
+
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+						{coreTechnologies.map((coreTechnology) => (
+							<Card
+								key={coreTechnology.title}
+								className="bg-paper-100! border-paper-300!"
+							>
+								<CardHeader className="flex flex-col gap-2">
+									<div className="p-2 bg-paper-200 rounded-lg">
+										{coreTechnology.icon}
+									</div>
+									<span className="font-semibold text-xl text-black">
+										{coreTechnology.title}
+									</span>
+								</CardHeader>
+								<CardContent>
+									<p className="text-black">{coreTechnology.description}</p>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section className="max-w-7xl mx-auto flex flex-col gap-4 p-4">
+				<span className="text-2xl font-bold">Knowledge Base Sources</span>
+				<p>
+					Chloe is trained on a specific subset of literature focusing on
+					personal development, psychology, and philosophy. We do not use
+					general internet crawl data for our core reasoning.
+				</p>
+
+				<div className="rounded-lg border border-paper-300">
+					<div className="bg-paper-100 p-4 rounded-t-lg border-b border-paper-300">
+						<span className="uppercase font-semibold">Included Genres</span>
+					</div>
+
+					<div className="divide-y divide-paper-300">
+						{genres.map((genre) => (
+							<div className="flex items-center gap-2 p-4" key={genre.title}>
+								<div className="p-2 bg-paper-200 rounded-full">
+									{genre.icon}
+								</div>
+
+								<div className="flex flex-col gap-0.5">
+									<span className="font-semibold">{genre.title}</span>
+									<p className="text-xs">{genre.description}</p>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
 		</div>
