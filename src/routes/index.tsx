@@ -228,6 +228,15 @@ function App() {
 					</div>
 				</div>
 			</section>
+
+			<section className="max-w-7xl mx-auto p-4 flex items-center justify-center">
+				<Link
+					to="/conversations"
+					className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-colors shadow-soft"
+				>
+					Start Chatting
+				</Link>
+			</section>
 		</div>
 	);
 }
