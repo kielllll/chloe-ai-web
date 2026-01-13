@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
 	BookOpen,
 	Brain,
@@ -99,12 +99,12 @@ function App() {
 							through the pages of history's best advice
 						</p>
 						<div className="flex flex-col items-center gap-4">
-							<button
-								type="button"
+							<Link
+								to="/conversations"
 								className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-colors shadow-soft"
 							>
 								Start Chatting
-							</button>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -170,8 +170,8 @@ function App() {
 				<div className="max-w-7xl p-6 flex flex-col gap-4 mx-auto">
 					<span className="text-2xl font-bold">Core Technology</span>
 					<p>
-						Chloe utilizes vector embeddings to retrieve relevant passages
-						from a curated library of self-help literature, along with Google
+						Chloe utilizes vector embeddings to retrieve relevant passages from
+						a curated library of self-help literature, along with Google
 						Gemini's fast LLM. Chloe doesn't just generate text, it grounds
 						responses in established psychological frameworks.
 					</p>

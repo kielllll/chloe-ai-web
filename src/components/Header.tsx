@@ -14,7 +14,7 @@ export default function Header() {
 				</h1>
 
 				<Link
-					to="/demo/start/api-request"
+					to="/conversations"
 					className="px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-colors shadow-soft"
 				>
 					Start Chatting
