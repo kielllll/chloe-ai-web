@@ -35,9 +35,9 @@ function ConversationsIndex() {
 			};
 
 			setMessages((prev) => [...prev, userMessage]);
-      
-      // Reset the form
-      form.reset();
+
+			// Reset the form
+			form.reset();
 
 			// Prepare conversation context
 			const context = JSON.stringify(
@@ -53,7 +53,7 @@ function ConversationsIndex() {
 					conversationContext: context,
 					// saveConversation: true,
 				});
-        
+
 				// Add empty assistant message for streaming
 				const assistantMessage: Message = {
 					messageId,
@@ -114,10 +114,11 @@ function ConversationsIndex() {
 					<div
 						key={message.messageId || index}
 						style={{
-              animationName: "slideUp",
-              animationDuration: "0.3s",
-              animationTimingFunction: "ease-out",
-							animationFillMode: index === messages.length - 1 ? "none" : "forwards",
+							animationName: "slideUp",
+							animationDuration: "0.3s",
+							animationTimingFunction: "ease-out",
+							animationFillMode:
+								index === messages.length - 1 ? "none" : "forwards",
 							alignSelf: message.type === "agent" ? "start" : "end",
 						}}
 						className={`rounded-b-lg w-fit lg:max-w-[70%] p-4 ${messageClass[message.type]}`}

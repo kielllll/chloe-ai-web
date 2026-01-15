@@ -23,14 +23,15 @@ import { useFeatureFlags } from "@/lib/use-feature-flags";
 export const Route = createFileRoute("/")({ component: App });
 
 function App() {
-  const { isEnabled } = useFeatureFlags();
+	const { isEnabled } = useFeatureFlags();
 
 	const features = [
 		{
 			icon: <Lock className="size-8 text-paper-900" />,
-			title: isEnabled("SaveConversation") ? "Private with Optional Saving" : "Anonymous",
-			description:
-				`No login required. Chats are anonymnous. ${ isEnabled("SaveConversation") ? "You explicity decide whether to save a conversation for future reference." : "Your conversation is not saved." }`,
+			title: isEnabled("SaveConversation")
+				? "Private with Optional Saving"
+				: "Anonymous",
+			description: `No login required. Chats are anonymnous. ${isEnabled("SaveConversation") ? "You explicity decide whether to save a conversation for future reference." : "Your conversation is not saved."}`,
 		},
 		{
 			icon: <LibraryBig className="size-8 text-paper-900" />,
