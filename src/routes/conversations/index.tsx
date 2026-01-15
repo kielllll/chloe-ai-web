@@ -35,6 +35,9 @@ function ConversationsIndex() {
 			};
 
 			setMessages((prev) => [...prev, userMessage]);
+      
+      // Reset the form
+      form.reset();
 
 			// Prepare conversation context
 			const context = JSON.stringify(
@@ -88,8 +91,6 @@ function ConversationsIndex() {
 				console.error("Failed to send message:", error);
 				// TODO: Show error message to user
 			}
-
-			form.reset();
 		},
 	});
 
