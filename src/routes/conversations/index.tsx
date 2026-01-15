@@ -113,9 +113,10 @@ function ConversationsIndex() {
 					<div
 						key={message.messageId || index}
 						style={{
-							animation: `slideUp 0.3s ease-out ${index === messages.length - 1 ? "" : "forwards"}`,
-							opacity: index === messages.length - 1 ? 0 : 1,
-							animationFillMode: "forwards",
+              animationName: "slideUp",
+              animationDuration: "0.3s",
+              animationTimingFunction: "ease-out",
+							animationFillMode: index === messages.length - 1 ? "none" : "forwards",
 							alignSelf: message.type === "agent" ? "start" : "end",
 						}}
 						className={`rounded-b-lg w-fit lg:max-w-[70%] p-4 ${messageClass[message.type]}`}
