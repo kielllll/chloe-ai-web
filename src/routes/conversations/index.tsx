@@ -1,7 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
 import { Send } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useSendMessage } from "@/mutations/messages";
@@ -109,7 +111,7 @@ function ConversationsIndex() {
 
 	return (
 		<div className="flex-1 mx-auto flex flex-col gap-4 w-screen max-w-7xl p-4">
-			<div className="flex-1 flex flex-col gap-4 overflow-y-auto min-h-[0px] max-h-[calc(100vh-221px)]">
+			<div className="flex-1 flex flex-col gap-4 overflow-y-auto min-h-0 max-h-[calc(100vh-221px)]">
 				{messages.map((message, index) => (
 					<div
 						key={message.messageId || index}
@@ -123,7 +125,16 @@ function ConversationsIndex() {
 						}}
 						className={`rounded-b-lg w-fit lg:max-w-[70%] p-4 ${messageClass[message.type]}`}
 					>
-						{message.content}
+						<div className="prose prose-sm max-w-none dark:prose-invert">
+							<ReactMarkdown
+								remarkPlugins={[remarkGfm]}
+								components={{
+									p: ({ children }) => <p className="m-0">{children}</p>,
+								}}
+							>
+								{message.content}
+							</ReactMarkdown>
+						</div>
 					</div>
 				))}
 				<div ref={messagesEndRef} />
